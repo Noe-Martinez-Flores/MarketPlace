@@ -34,6 +34,14 @@ public class CategoryService {
         return new ResponseEntity<>(new Message("Categoria Registrada",false,savedCategory),HttpStatus.OK);
     }
 
+    @Transactional
+    public ResponseEntity<Message> findById(long id){
+        if(categoryRepository.existsById(id)){
+            return new ResponseEntity<>(new Message("Ok",false,categoryRepository.getById(id)),HttpStatus.OK);
+        }
+
+        return new ResponseEntity<>(new Message("OK",true,null),HttpStatus.OK);
+    }
 
     @Transactional(rollbackOn = {SQLException.class})
     public ResponseEntity<Message> update (Category category){

@@ -11,6 +11,11 @@ public class Category {
     @Column(columnDefinition =  "text", unique = true)
     private  String description;
 
+    public Category(long id, String description) {
+        this.id = id;
+        this.description = description;
+    }
+
     public Category(String description) {
         this.description = description;
     }

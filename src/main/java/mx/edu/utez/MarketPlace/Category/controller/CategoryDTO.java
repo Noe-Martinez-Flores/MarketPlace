@@ -9,6 +9,7 @@ public class CategoryDTO {
         this.description = description;
     }
 
+
     public CategoryDTO(String description) {
         this.description = description;
     }
